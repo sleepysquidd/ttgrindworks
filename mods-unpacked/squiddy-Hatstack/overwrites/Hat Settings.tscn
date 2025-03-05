@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgdawcsutvddj"]
+
+[ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="1_r7ij3"]
+[ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="2_usub3"]
+[ext_resource type="PackedScene" uid="uid://b0d1er4oqiqcn" path="res://objects/general_ui/general_button/general_button.tscn" id="3_fayku"]
+[ext_resource type="Shader" path="res://scenes/title_screen/hue_shift.gdshader" id="4_65056"]
+[ext_resource type="Texture2D" uid="uid://ddcktpjy3gdew" path="res://ui_assets/misc/uiAccessoryDelete_up.png" id="5_p7oha"]
+[ext_resource type="Texture2D" uid="uid://b7ri5sq021cvo" path="res://ui_assets/misc/uiAccessoryDelete_down.png" id="6_6x6g5"]
+[ext_resource type="Texture2D" uid="uid://dn8vndd37lqom" path="res://ui_assets/misc/uiAccessoryDelete_rollover.png" id="7_pb8jx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3ake"]
+font = ExtResource("1_r7ij3")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7xedo"]
+font = ExtResource("2_usub3")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8e8ls"]
+shader = ExtResource("4_65056")
+shader_parameter/Shift_Hue = 0.585
+shader_parameter/alpha = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjp26"]
+font = ExtResource("2_usub3")
+font_size = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jon4a"]
+shader = ExtResource("4_65056")
+shader_parameter/Shift_Hue = 0.585
+shader_parameter/alpha = 1.0
+
+[node name="HatSettings" type="VBoxContainer"]
+offset_right = 272.0
+offset_bottom = 229.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "Hatstack"
+label_settings = SubResource("LabelSettings_k3ake")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HatSetting" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HatSetting"]
+layout_mode = 2
+text = "Hats:"
+label_settings = SubResource("LabelSettings_7xedo")
+
+[node name="HatButton" parent="HatSetting" instance=ExtResource("3_fayku")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8e8ls")
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture_normal = ExtResource("5_p7oha")
+texture_pressed = ExtResource("6_6x6g5")
+texture_hover = ExtResource("7_pb8jx")
+texture_disabled = ExtResource("6_6x6g5")
+hover_db_offset = 6.0
+press_db_offset = 0.0
+text = "On"
+
+[node name="Label" parent="HatSetting/HatButton" index="0"]
+text = "On"
+label_settings = SubResource("LabelSettings_hjp26")
+
+[node name="GlassesSetting" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GlassesSetting"]
+layout_mode = 2
+text = "Glasses"
+label_settings = SubResource("LabelSettings_7xedo")
+
+[node name="GlassesButton" parent="GlassesSetting" instance=ExtResource("3_fayku")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8e8ls")
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture_normal = ExtResource("5_p7oha")
+texture_pressed = ExtResource("6_6x6g5")
+texture_hover = ExtResource("7_pb8jx")
+texture_disabled = ExtResource("6_6x6g5")
+hover_db_offset = 6.0
+press_db_offset = 0.0
+text = "On"
+
+[node name="Label" parent="GlassesSetting/GlassesButton" index="0"]
+text = "On"
+label_settings = SubResource("LabelSettings_hjp26")
+
+[node name="BackpackSetting" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackpackSetting"]
+layout_mode = 2
+text = "Backpacks"
+label_settings = SubResource("LabelSettings_7xedo")
+
+[node name="BackpackButton" parent="BackpackSetting" instance=ExtResource("3_fayku")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jon4a")
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture_normal = ExtResource("5_p7oha")
+texture_pressed = ExtResource("6_6x6g5")
+texture_hover = ExtResource("7_pb8jx")
+texture_disabled = ExtResource("6_6x6g5")
+hover_db_offset = 6.0
+press_db_offset = 0.0
+text = "On"
+
+[node name="Label" parent="BackpackSetting/BackpackButton" index="0"]
+text = "On"
+label_settings = SubResource("LabelSettings_hjp26")
+
+[editable path="HatSetting/HatButton"]
+[editable path="GlassesSetting/GlassesButton"]
+[editable path="BackpackSetting/BackpackButton"]
