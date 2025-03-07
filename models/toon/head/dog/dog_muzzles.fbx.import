@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5glu32dp5dwv"
-path="res://.godot/imported/dog_muzzles.fbx-c003bd36adf8de3e864f889f01c50fa2.scn"
+valid=false
 
 [deps]
 
 source_file="res://models/toon/head/dog/dog_muzzles.fbx"
-dest_files=["res://.godot/imported/dog_muzzles.fbx-c003bd36adf8de3e864f889f01c50fa2.scn"]
 
 [params]
 
@@ -18,6 +17,7 @@ nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
