@@ -38,13 +38,15 @@ func install_script_extensions() -> void:
 	# Needs to update to change how cosmetics are handled
 	#ModLoaderMod.install_script_extension(extensions_dir_path.path_join("objects/items/classes/item_accessory.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("objects/general_ui/settings_menu/settings_menu.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("objects/globals/item_service.gd"))
 
 
 func install_script_hook_files() -> void:
 	extensions_dir_path = mod_dir_path.path_join("extensions")
 	#ModLoaderMod.install_script_hooks("res://main.gd", extensions_dir_path.path_join("main.gd"))
 	ModLoaderMod.install_script_hooks("res://objects/items/world_item/world_item.gd", extensions_dir_path.path_join("objects/items/world_item/world_item.hooks.gd"))
-
+	ModLoaderMod.install_script_hooks("res://objects/items/classes/item_accessory.gd", extensions_dir_path.path_join("objects/items/classes/item_accessory.hooks.gd"))
+	
 
 func add_translations() -> void:
 	# ! Place all of your translation files into this directory
