@@ -8,7 +8,7 @@ const ConfigConversion: Dictionary = {
 
 func get_placement(chain: ModLoaderHookChain, item: ItemAccessory, dna: ToonDNA) -> AccessoryPlacement:
 	var modSetting = ModLoaderConfig.get_current_config("squiddy-Hatstack")
-	var returnPlacement: AccessoryPlacement
+	var returnPlacement: AccessoryPlacement = null
 	var offset := Vector3(0, 0, 0)
 	
 	if item.slot == Item.ItemSlot.BACKPACK:
@@ -23,9 +23,10 @@ func get_placement(chain: ModLoaderHookChain, item: ItemAccessory, dna: ToonDNA)
 	
 	if modSetting.data[ConfigConversion[item.slot]] == 1:
 		for oldItem in Util.get_player().stats.items:
-			if oldItem.slot != item.slot or oldItem == item:
+			if oldItem.slot != item.slot:
 				continue
-			
+			if oldItem == item:
+				break
 			var newModel = oldItem.model.instantiate()
 			
 			var size = newModel.get_children()[0].get_aabb().size
