@@ -7,32 +7,32 @@
 				"SleepySquidd"
 			],
 			"compatible_game_version": [
-				"0.0.0"
+				"1.0.3"
 			],
 			"compatible_mod_loader_version": [
 				"7.0.0"
 			],
 			"config_schema": {
-				"title": "Config",
 				"description": "Stored settings for Hatstack",
-				"type": "object",
 				"properties": {
-					"hats": {
-						"title": "Current setting for hats",
-						"type": "number",
-						"default": 0
+					"backpacks": {
+						"default": 2.0,
+						"title": "Current setting for backpacks",
+						"type": "number"
 					},
 					"glasses": {
+						"default": 1.0,
 						"title": "Current setting for glasses",
-						"type": "number",
-						"default": 0,
+						"type": "number"
 					},
-					"backpacks": {
-						"title": "Current setting for backpacks",
-						"type": "number",
-						"default": 0,
+					"hats": {
+						"default": 1.0,
+						"title": "Current setting for hats",
+						"type": "number"
 					}
-				}
+				},
+				"title": "Config",
+				"type": "object"
 			},
 			"description_rich": "",
 			"image": null,
